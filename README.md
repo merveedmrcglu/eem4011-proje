@@ -15,7 +15,7 @@ Kullanılan kayıtlar `118e24` ve `118e00`'dır. Kayıtlar Colab'de WFDB kütüp
 3. Notebook hücrelerini sırayla çalıştırın. Kod, kayıtları WFDB üzerinden PhysioNet'ten okur.
 4. Ham sinyal ve 5–20 Hz Butterworth band-pass filtreli sinyal için tepe bulma ve değerlendirme adımlarını çalıştırın.
 
-## Şekiller
+## Grafikler
 
 - Ham EKG sinyali üzerinde referans atımların ve bulunan tepelerin karşılaştırması.
 - Ham ve Butterworth filtreli sinyallerde bulunan tepelerin karşılaştırması.
