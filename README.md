@@ -1,4 +1,4 @@
-# NSTDB'de R Tepesi Tespiti
+# eem4011-proje
 
 Bu projede MIT-BIH Noise Stress Test Database (NSTDB) EKG kayıtlarında R tepesi tespiti, ham sinyal ve Butterworth band-pass filtresi uygulanmış sinyal üzerinde karşılaştırılır.
 
