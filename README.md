@@ -51,7 +51,7 @@ Butterworth yöntemi altı kaydın tamamında en yüksek havuzlanmış F1 nokta 
 
 ## Kod
 
-[Google Colab analiz defteri](Untitled1%20(1).ipynb)
+[Google Colab analiz defteri](NSTDB_R_Tepesi_Tespiti_Analiz.ipynb)
 
 ## Kaynak ve lisans
 
