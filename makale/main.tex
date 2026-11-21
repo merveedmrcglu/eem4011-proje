@@ -1,0 +1,65 @@
+\documentclass[preprint,12pt]{elsarticle}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{url}
+\journal{Biomedical Signal Processing and Control}
+
+\begin{document}
+\begin{frontmatter}
+\title{R-Peak Detection Under Electrode-Motion Noise in the MIT-BIH Noise Stress Test Database}
+\author{Merve Demircio\u{g}lu}
+\begin{abstract}
+Electrode-motion noise can obscure R peaks and reduce the reliability of simple ECG peak detectors. This study evaluates how two fixed preprocessing approaches affect R-peak detection on the MIT-BIH Noise Stress Test Database. The 118 and 119 base recordings were examined at 0, 6, and 24 dB, yielding six signal variants rather than six independent patients. For each variant, 78 ten-second windows from the noisy intervals were evaluated at a sampling rate of 360 Hz. A raw-signal peak detector served as the baseline. The same detector was applied after a fourth-order, zero-phase 5--20 Hz Butterworth band-pass filter and after eight-level sym4 wavelet soft-thresholding. Predicted peaks were matched one-to-one with beat annotations within 150 ms. Performance was measured by pooled F1 score, with uncertainty from 1,000 paired within-record bootstrap resamples of windows. On 118e24, F1 was 0.946 for the raw baseline, 0.997 for Butterworth preprocessing, and 0.962 for wavelet preprocessing. On the 0 dB variants, Butterworth F1 was 0.620 for 118e00 and 0.576 for 119e00. The six variants share only two base recordings; these within-record intervals do not establish generalization to new patients. Further evaluation on independent recordings is required.
+\end{abstract}
+\begin{keyword}
+ECG \sep R-peak detection \sep electrode-motion noise \sep Butterworth filter \sep wavelet thresholding
+\end{keyword}
+\end{frontmatter}
+
+\section{Introduction}
+Electrode-motion artefacts can obscure ECG R peaks. This draft compares fixed preprocessing choices on the MIT-BIH Noise Stress Test Database (NSTDB) \cite{nstdb}. It is a within-record comparison, not a clinical validation.
+
+\section{Materials and methods}
+\subsection{Data and evaluation windows}
+The variants 118e00, 118e06, 118e24, 119e00, 119e06, and 119e24 derive from only two base ECG recordings. The sampling rate is 360 Hz. Each variant contributes 78 noisy ten-second windows. Beat annotations provide reference peaks.
+
+\subsection{Peak detection and preprocessing}
+The raw-signal baseline uses a minimum peak distance of 0.30 s and prominence of 0.5. The identical detector is applied after a fourth-order, zero-phase 5--20 Hz Butterworth band-pass filter and after eight-level sym4 wavelet soft-thresholding. Parameters are fixed for this comparison.
+
+\subsection{Scoring and uncertainty}
+Predicted and reference peaks are matched one-to-one within $\pm150$ ms. Pooled $F_1=2TP/(2TP+FP+FN)$ is calculated by variant. Ninety-five percent confidence intervals come from 1,000 paired bootstrap resamples of windows within each record.
+
+\section{Results}
+\begin{table}[ht]
+\centering
+\caption{Pooled F1 on noisy ten-second windows.}
+\label{tab:f1}
+\begin{tabular}{lccc}
+\toprule
+Variant & Raw & Butterworth & Wavelet \\
+\midrule
+118e00 & 0.543 & 0.620 & 0.540 \\
+118e06 & 0.605 & 0.734 & 0.608 \\
+118e24 & 0.946 & 0.997 & 0.962 \\
+119e00 & 0.543 & 0.576 & 0.546 \\
+119e06 & 0.648 & 0.706 & 0.652 \\
+119e24 & 0.839 & 0.946 & 0.857 \\
+\bottomrule
+\end{tabular}
+\end{table}
+Butterworth has the highest pooled F1 point estimate in each variant (Table~\ref{tab:f1}). On 118e24, its paired difference from raw is 0.051 (95\% CI: 0.041--0.061). Wavelet thresholding does not improve on raw in every variant.
+
+\section{Discussion and limitations}
+The six variants come from only two base recordings. Window-level bootstrap quantifies within-record variation but cannot establish generalization to independent patients. Three recent related papers and independent-record testing are needed before making a journal-level novelty or generalization claim.
+
+\section{Conclusion}
+For the tested noisy windows and fixed detector settings, Butterworth preprocessing gave the highest pooled F1 point estimate across all six variants.
+
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+ChatGPT (Codex) assisted with code drafting, debugging, structure, and language. The author will verify the code, results, and final text before any manuscript submission.
+
+\begin{thebibliography}{1}
+\bibitem{nstdb} G. B. Moody, W. E. Muldrow, and R. G. Mark, ``A noise stress test for arrhythmia detectors,'' \emph{Computers in Cardiology}, vol. 11, pp. 381--384, 1984. NSTDB: \url{https://physionet.org/content/nstdb/1.0.0/}, doi:10.13026/C2HS3T.
+\end{thebibliography}
+\end{document}
