@@ -6,12 +6,12 @@ Kaynak: [Biomedical Signal Processing and Control — Guide for Authors](https:/
 |---|---|---|
 | Makale türü ve uzunluk | Full paper normalde yaklaşık 5.000 kelime; short communication tipik 2.000; Technical Note yaklaşık 5.000 kelime ve en çok 5 görsel. | Tür henüz kesinleşmedi; mevcut 3 sayfalık iskelet tam makale değil. |
 | Özet ve anahtar kelime | Özet en çok 250 kelime; İngilizce 1–7 anahtar kelime. | Geçici özet sınır içinde; beş anahtar kelime var. |
-| Highlights | Ayrı düzenlenebilir dosyada zorunlu; 3–5 madde, her madde boşluklar dahil en çok 85 karakter. | Hazırlanacak. |
+| Highlights | Ayrı düzenlenebilir dosyada zorunlu; 3–5 madde, her madde boşluklar dahil en çok 85 karakter. | Dört maddelik `makale/highlights.txt` hazır. |
 | Graphical abstract | Teşvik ediliyor; zorunlu değil; ayrı dosya. | Hazırlanmadı. |
 | Hakemlik | Single-anonymized; uygun bulunan çalışmalar genellikle en az iki hakeme gönderilir. | Bilgi amaçlı. |
 | LaTeX ve dosya | Kaynak `.tex` olmalı, PDF kaynak dosya olarak kabul edilmez. Kılavuz belirli LaTeX sınıfı adı vermiyor. | İskelette `elsarticle` kullanılıyor. |
-| Şekiller | Metinde atıf, sırayla numara, açıklama ve her şekil için ayrı dosya. Okunabilir çözünürlük istenir. | Depodaki sonuç grafiği taslağa eklenebilir; son gönderimde ayrı dosya gerekir. |
-| Kaynaklar | Metindeki her atıf listede ve listedeki her kaynak metinde olmalı. Köşeli parantez içinde geçiş sırasına göre numara; DOI varsa eklenir. | LaTeX kaynakları ve atıflar geliştirilecek. |
+| Şekiller | Metinde atıf, sırayla numara, açıklama ve her şekil için ayrı dosya. Okunabilir çözünürlük istenir. | F1 grafiği iskelette atıf ve açıklamayla eklendi; ayrıca ayrı PNG dosyası var. |
+| Kaynaklar | Metindeki her atıf listede ve listedeki her kaynak metinde olmalı. Köşeli parantez içinde geçiş sırasına göre numara; DOI varsa eklenir. | Mevcut iskelette atıflar ve kaynakça eşleşiyor. İki ek PDF yalnız okuma kaydında; makale metninde kullanılmadı. |
 | Veri | Bu dergide Option C: araştırma verisini uygun depoya koyup bağlantı vermek veya paylaşamama gerekçesini yazmak zorunlu. | Ham NSTDB verisine kaynak bağlantısı var; türetilmiş sonuçların paylaşımı ayrıca düzenlenecek. |
 | Çıkar çatışması ve destek | Çıkar çatışması beyanı ve finansman kaynağı bilgisi istenir. | Öğrencinin doğrulayacağı gerçek durum yazılmalı; varsayım yapılmaz. |
 | Yazar katkısı | CRediT rolleri istenir. | Son yazarlık ve roller doğrulanmalı. |

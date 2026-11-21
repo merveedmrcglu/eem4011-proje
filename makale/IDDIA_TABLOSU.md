@@ -13,7 +13,7 @@ Bu tablo yalnız mevcut NSTDB analizini anlatır. `118` ve `119` iki temel kayı
 
 ## Hedef dergideki yakın çalışmalarla katkı karşılaştırması
 
-Aşağıdaki karşılaştırma kaynakların erişilebilen metinlerine dayanır. Rahman ve ark. makalesinin 9 sayfalık tam PDF'i kurumsal Figshare kaydından indirildi ve yöntem, sonuç, tartışma, sınırlılık bölümleri okundu. Sanz-Guerrero ve ark. için açık tam HTML metin, Costabile ve ark. için yayınevi ön izlemesi ve indekslenmiş HTML bölümleri incelendi. Son iki PDF indirilmedi.
+Aşağıdaki karşılaştırma kaynakların erişilebilen metinlerine dayanır. Rahman ve ark. makalesinin 9 sayfalık tam PDF'i kurumsal Figshare kaydından indirildi ve yöntem, sonuç, tartışma, sınırlılık bölümleri okundu. Sanz-Guerrero ve ark. için açık tam HTML metin, Costabile ve ark. için yayınevi ön izlemesi ve indekslenmiş HTML bölümleri incelendi. Son iki PDF indirilmedi. Ayrıca hedef dergiden iki farklı makalenin yazar ön baskısı indirilip incelendi; bunların konuları doğrudan gürültülü R tepesi tespiti olmadığı için yakın üçlüyle karıştırılmamalı. Ayrıntı [okuma kaydında](LITERATUR_OKUMA_KAYDI.md).
 
 | Makale | Yayımlanmış katkısı | Bu projeye göre durum |
 |---|---|---|
