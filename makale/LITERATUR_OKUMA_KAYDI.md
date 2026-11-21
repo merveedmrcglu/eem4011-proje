@@ -21,4 +21,4 @@ Bu çalışmalar derginin güncel EKG makalelerini ve katkı düzeyini anlamak i
 
 ## Sonuç
 
-Tek cümlelik mevcut katkı, iki temel NSTDB kaydında sabit ön işleme yöntemlerini eşleştirilmiş pencerelerle karşılaştırır. Bu üç yayının yeni yöntem ve/veya daha geniş doğrulama düzeyine henüz ulaşmaz. Bağımsız kişi/kayıt testi yapılmadan genelleme veya klinik yarar iddiası kurulmaz.
+Tek cümlelik mevcut katkı, iki temel NSTDB kaydında sabit ön işleme yöntemlerini eşleştirilmiş pencerelerle karşılaştırır. Ayrı bir ek testte dört farklı MIT-BIH temel EKG'sine aynı elektrot hareketi gürültüsü kesiti sentetik olarak eklenmiştir; [protokol](DIS_DOGRULAMA_PROTOKOLU.md) ve [sonuçlar](dis_dogrulama_ozet.csv) açıktır. Bu, gerçek koşullarda yeni hastalardan alınmış gürültülü EKG testi değildir. Çalışma üç yakın yayının yeni yöntem ve/veya daha geniş doğrulama düzeyine henüz ulaşmaz. Nüfus genellemesi veya klinik yarar iddiası kurulmaz.

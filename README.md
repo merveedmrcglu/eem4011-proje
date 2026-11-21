@@ -35,9 +35,22 @@ Tabloda her yöntemin havuzlanmış F1 değeri ve pencere bootstrap'iyle hesapla
 
 Butterworth yöntemi altı kaydın tamamında en yüksek havuzlanmış F1 nokta tahminini verdi. Dalgacık yöntemi ham baseline'a yakın sonuçlar verdi; bu analiz, dalgacığın her kayıtta iyileşme sağladığını göstermiyor. Sonuçlar yalnızca incelenen altı kayıt ve gürültülü pencereler için geçerlidir.
 
+## Ayrı temel EKG kayıtlarında ek stres testi
+
+İlk analizin 118/119 EKG'lerinden farklı [MIT-BIH Arrhythmia Database](https://physionet.org/content/mitdb/1.0.0/) kayıtları **100, 101, 103 ve 105** üzerinde, NSTDB'nin `em` elektrot hareketi gürültüsü ayrı ayrı 0, 6 ve 24 dB hedef SNR ile sentetik olarak eklendi. Önceden sabitlenen üç yöntem ve tepe bulucu ayarları değiştirilmedi. Her temel kayıt ve SNR için 60 adet 10 saniyelik pencere değerlendirildi. Aşağıdaki F1, dört kaydın toplam TP/FP/FN sayılarından hesaplanmıştır; kişi başına sonuçlar [CSV'de](makale/dis_dogrulama_ozet.csv) yer alır.
+
+| Hedef SNR | Ham F1 | Butterworth F1 | Dalgacık F1 |
+|---|---:|---:|---:|
+| 0 dB | 0,866 | 0,901 | 0,876 |
+| 6 dB | 0,939 | 0,967 | 0,953 |
+| 24 dB | 0,997 | 0,999 | 0,998 |
+
+Butterworth havuzlanmış nokta tahmininde üç SNR'nin her birinde en yüksektir. Ancak her kişide üstün değildir: 103 kaydında 6 dB'de dalgacık F1=0,938, Butterworth F1=0,929. Test için [önceden sabitlenen protokol](makale/DIS_DOGRULAMA_PROTOKOLU.md), [yeniden çalıştırılabilir kod](makale/dis_dogrulama.py), [pencere sayımları](makale/dis_dogrulama_pencere.csv) ve [grafik](makale/dis_dogrulama_f1.png) ayrıca verilmiştir.
+
 ## Grafikler
 
 - [Altı kayıtta üç yöntemin F1 ve %95 GA karşılaştırması](jury-figures/nstdb_3_yontem_f1_ga95.png)
+- [Dört farklı temel EKG'de sentetik elektrot hareketi gürültüsüyle ek test](makale/dis_dogrulama_f1.png)
 - [118e00: en düşük ham F1 pencereleri](jury-figures/118e00_en_dusuk_ham_f1_3_yontem.png)
 - [118e06: en düşük ham F1 pencereleri](jury-figures/118e06_en_dusuk_ham_f1_3_yontem.png)
 - [118e24: en düşük ham F1 pencereleri](jury-figures/118e24_en_dusuk_ham_f1_3_yontem.png)
@@ -47,7 +60,7 @@ Butterworth yöntemi altı kaydın tamamında en yüksek havuzlanmış F1 nokta 
 
 ## Sınırlılıklar
 
-118 ve 119, NSTDB'de gürültü eklenmiş iki temel EKG kaydının farklı SNR sürümleridir; altı sürüm altı bağımsız kişi anlamına gelmez. Bootstrap yalnızca her kaydın pencereleri içinde yapılmıştır. Bu nedenle sonuçlar daha geniş bir hasta grubuna genellenemez.
+118 ve 119, NSTDB'de gürültü eklenmiş iki temel EKG kaydının farklı SNR sürümleridir; altı sürüm altı bağımsız kişi anlamına gelmez. Bootstrap yalnızca her kaydın pencereleri içinde yapılmıştır. Ek test dört farklı temel EKG ile sınırlıdır; `em` gürültüsünün aynı kesiti her testte yeniden kullanılmıştır. Yeni kişilerden doğal koşullarda toplanmış gürültülü EKG veya klinik doğrulama yoktur. Bu nedenle sonuçlar daha geniş bir hasta grubuna genellenemez.
 
 ## Kod
 
