@@ -1,0 +1,6 @@
+Highlights (preliminary draft)
+
+- Two NSTDB base recordings were assessed at three electrode-motion noise levels.
+- One R-peak detector was compared on raw, Butterworth, and wavelet signals.
+- Butterworth gave the highest pooled F1 point estimate in all six variants.
+- Within-record bootstrap intervals do not measure patient-level generalization.

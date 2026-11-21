@@ -2,6 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{url}
 \journal{Biomedical Signal Processing and Control}
 
@@ -19,6 +20,8 @@ ECG \sep R-peak detection \sep electrode-motion noise \sep Butterworth filter \s
 
 \section{Introduction}
 Electrode-motion artefacts can obscure ECG R peaks. This draft compares fixed preprocessing choices on the MIT-BIH Noise Stress Test Database (NSTDB) \cite{nstdb}. It is a within-record comparison, not a clinical validation.
+
+Recent work has addressed related but distinct tasks. Rahman et al. proposed a learned noise detector that drops contaminated segments before wearable ECG classification \cite{rahman2025}. Sanz-Guerrero et al. developed an attention-based network for full-wave delineation on the 12-lead LUDB dataset \cite{sanz2026}. Costabile et al. studied a three-point weighted pre-filter before conventional ECG denoisers using signal-reconstruction metrics \cite{costabile2026}. Their datasets and endpoints differ from the NSTDB R-peak F1 comparison here; numerical scores are not directly comparable.
 
 \section{Materials and methods}
 \subsection{Data and evaluation windows}
@@ -50,8 +53,16 @@ Variant & Raw & Butterworth & Wavelet \\
 \end{table}
 Butterworth has the highest pooled F1 point estimate in each variant (Table~\ref{tab:f1}). On 118e24, its paired difference from raw is 0.051 (95\% CI: 0.041--0.061). Wavelet thresholding does not improve on raw in every variant.
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{nstdb_3_yontem_f1_ga95.png}
+\caption{Pooled F1 and within-record, paired-window 95\% bootstrap intervals for the three tested approaches across six NSTDB noise variants. The variants originate from two base recordings.}
+\label{fig:f1}
+\end{figure}
+Figure~\ref{fig:f1} displays the six-variant comparison; its intervals do not represent uncertainty across independent patients.
+
 \section{Discussion and limitations}
-The six variants come from only two base recordings. Window-level bootstrap quantifies within-record variation but cannot establish generalization to independent patients. Three recent related papers and independent-record testing are needed before making a journal-level novelty or generalization claim.
+The six variants come from only two base recordings. Window-level bootstrap quantifies within-record variation but cannot establish generalization to independent patients. The chosen filters and detector parameters were fixed in this comparison; no independent tuning set or external patient test was used. The related papers study different tasks and include methodological development or broader validation \cite{rahman2025,sanz2026,costabile2026}. Consequently, this draft does not claim a new algorithm or journal-level novelty.
 
 \section{Conclusion}
 For the tested noisy windows and fixed detector settings, Butterworth preprocessing gave the highest pooled F1 point estimate across all six variants.
@@ -59,7 +70,10 @@ For the tested noisy windows and fixed detector settings, Butterworth preprocess
 \section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
 ChatGPT (Codex) assisted with code drafting, debugging, structure, and language. The author will verify the code, results, and final text before any manuscript submission.
 
-\begin{thebibliography}{1}
+\begin{thebibliography}{4}
 \bibitem{nstdb} G. B. Moody, W. E. Muldrow, and R. G. Mark, ``A noise stress test for arrhythmia detectors,'' \emph{Computers in Cardiology}, vol. 11, pp. 381--384, 1984. NSTDB: \url{https://physionet.org/content/nstdb/1.0.0/}, doi:10.13026/C2HS3T.
+\bibitem{rahman2025} S. Rahman, S. Pal, and C. Karmakar, ``Impact and mitigation of blind filtering in automatic ECG analysis for wearable sensors,'' \emph{Biomedical Signal Processing and Control}, vol. 110, part B, article 108294, 2025. doi:10.1016/j.bspc.2025.108294.
+\bibitem{sanz2026} M. Sanz-Guerrero et al., ``Peak Attention U-Net: Enhancing ECG delineation with attention,'' \emph{Biomedical Signal Processing and Control}, vol. 119, part B, article 109874, 2026. doi:10.1016/j.bspc.2026.109874.
+\bibitem{costabile2026} F. A. Costabile, M. I. Gualtieri, and A. Napoli, ``Pre-filtering ECG signals using the parabolic moving average to boost denoising performance,'' \emph{Biomedical Signal Processing and Control}, vol. 118, article 109788, 2026. doi:10.1016/j.bspc.2026.109788.
 \end{thebibliography}
 \end{document}
